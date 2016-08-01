@@ -53,7 +53,6 @@ REBOL [
       To start the server:
          Place the %webserv.r script in a folder, start up rebol, change to the directory
          the script is in, then type "do %webserv.r".}
-   Version: 0.0.0.15
    History: [
       0.0.0.3 {This version redirects all i/o to the web browser so 'read-io on
                system/ports/input can be used to get POSTed data, etc.}
@@ -78,6 +77,7 @@ REBOL [
       0.0.0.13 {One more CGI bugfix to support Vanilla 0.6.}
       0.0.0.14 {Placed script into a context, now the only word added to the global context is 'webserv-ctx}
       0.0.0.15 {Improved CGI execution speed and fixed more incompatibilities with Vanilla.}
+      0.0.1.0  My version. Added css file type
       ]
    library: [
       level: 'advanced
@@ -94,9 +94,9 @@ REBOL [
 webserv-ctx: context [
 file: request-method: Content: request: write-log: file-path: urlquery: responce: netmask: broadcast: dest-addr: none
 
-wwwpath: %./www/          ; change this to where the files are...
-port: 80                  ; change this to whatever port the server should listen to
-logfile: %webserv.log     ; the name of the logfile or set to none
+wwwpath: %../www/         ; change this to where the files are...
+port: 500                 ; change this to whatever port the server should listen to
+logfile: %../webserv.log  ; the name of the logfile or set to none
 default-type: "text/html" ; Content-Type for unrecognized extensions
 max-queue: 3000           ; maximum simultaneous connections
 server-name: read dns://
